@@ -181,41 +181,6 @@ export const projectsData = [
   },
 
   {
-    title: 'Prior Authorization Management System',
-    description:
-      'Developed healthcare authorization workflows and user interfaces supporting interoperability standards, authorization tracking, and operational efficiency.',
-
-    features: [
-      'Authorization Workflows',
-      'FHIR Integration',
-      'Status Tracking',
-      'Form Management',
-      'Data Validation',
-      'Workflow Automation',
-    ],
-
-    responsibilities: [
-      'Built user interfaces supporting prior authorization processes and healthcare interoperability workflows.',
-      'Integrated APIs for authorization requests, status updates, and data validation.',
-      'Developed reusable form components and workflow management interfaces.',
-      'Implemented validation and error-handling mechanisms to improve data accuracy.',
-      'Collaborated with stakeholders to deliver user-friendly healthcare workflow experiences.',
-    ],
-
-    technologies: [
-      'React.js',
-      'TypeScript',
-      'REST APIs',
-      'FHIR',
-      'Redux',
-      'JavaScript',
-    ],
-
-    impact:
-      'Improved authorization workflow efficiency through streamlined interfaces, standardized processes, and enhanced user experience.',
-  },
-
-  {
     title: 'TasteHub',
     description:
       'A full-stack food ordering and restaurant management platform built using the MERN stack.',
