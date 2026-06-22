@@ -4,7 +4,6 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 import { Section } from '../../ui/Section';
 import { Card } from '../../ui/Card';
-import { Button } from '../../ui/Button';
 import { personalInfo } from '../../../data/portfolioData';
 
 interface ContactItem {
@@ -113,20 +112,23 @@ export function Contact() {
                     </div>
 
                     {/* CTA Buttons */}
-                    <div className="flex flex-col justify-center gap-4 sm:flex-row">
-                        <Button asChild size="lg">
-                            <a href={`mailto:${personalInfo.email}`}>
-                                <Mail className="mr-2 h-4 w-4" />
-                                Email Me
-                            </a>
-                        </Button>
+                    <div className="grid gap-4 sm:grid-cols-2">
+                        <a
+                            href={`mailto:${personalInfo.email}`}
+                            className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary-600 px-8 py-4 text-lg font-semibold text-white shadow-lg transition hover:bg-primary-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2"
+                        >
+                            <Mail className="h-4 w-4" />
+                            Email Me
+                        </a>
 
-                        <Button asChild variant="outline" size="lg">
-                            <a href={personalInfo.resumeUrl} download>
-                                <Download className="mr-2 h-4 w-4" />
-                                Download Resume PDF
-                            </a>
-                        </Button>
+                        <a
+                            href={personalInfo.resumeUrl}
+                            download
+                            className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-8 py-4 text-lg font-semibold text-slate-900 transition hover:border-slate-300 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:hover:border-slate-600 dark:hover:bg-slate-800"
+                        >
+                            <Download className="h-4 w-4" />
+                            Download Resume PDF
+                        </a>
                     </div>
                 </Card>
             </motion.div>
