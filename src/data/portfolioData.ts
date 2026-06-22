@@ -258,6 +258,27 @@ export const projectsData = [
   },
 
   {
+    title: "Prior Authorization Platform",
+    description:
+      "Developed healthcare workflow modules to streamline prior authorization processes between providers and payers, improving efficiency and compliance.",
+
+    highlights: [
+      "Built Questionnaire and Decision Support modules",
+      "Implemented prior authorization request submission and tracking workflows",
+      "Integrated FHIR-based APIs for healthcare interoperability",
+    ],
+
+    technologies: [
+      "React.js",
+      "TypeScript",
+      "Redux",
+      "REST APIs",
+      "FHIR",
+      "Healthcare Interoperability",
+    ],
+  },
+
+  {
     title: "TasteHub",
     description:
       "Full-stack food ordering and restaurant management platform built with the MERN stack.",
@@ -275,6 +296,46 @@ export const projectsData = [
       "MongoDB",
       "JWT",
       "Tailwind CSS",
+    ],
+  },
+  
+  {
+    title: "Meal Master",
+    description:
+      "Single-page recipe management application built with React, enabling users to discover, search, and organize recipes efficiently.",
+
+    highlights: [
+      "Developed advanced recipe search and filtering features",
+      "Implemented dynamic SPA routing and state management",
+      "Created responsive and user-friendly recipe browsing experience",
+    ],
+
+    technologies: [
+      "React.js",
+      "JavaScript",
+      "CSS3",
+      "React Router",
+      "REST APIs",
+    ],
+  },
+
+  {
+    title: "Focus Frenzy",
+    description:
+      "Responsive camera eCommerce website developed using HTML, CSS, JavaScript, and Bootstrap, showcasing camera products with an intuitive shopping experience.",
+
+    highlights: [
+      "Designed responsive product catalog and landing pages",
+      "Implemented product filtering and search functionality",
+      "Built modern UI with Bootstrap components and custom styling",
+    ],
+
+    technologies: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Bootstrap",
+      "Responsive Design",
     ],
   },
 ];
