@@ -84,7 +84,7 @@ export default function HeroContent() {
                         from-blue-600
                         to-cyan-500
                         bg-clip-text
-                        text-transparent
+                        text-white
                     "
                 >
                     {personalInfo.name}
