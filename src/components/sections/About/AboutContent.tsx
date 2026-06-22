@@ -25,14 +25,20 @@ export default function AboutContent() {
             transition={{ duration: 0.8 }}
             className="lg:col-span-3"
         >
-            {aboutData.description.map((para, index) => (
-                <p
-                    key={index}
-                    className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-6"
-                >
-                    {para}
-                </p>
-            ))}
+            <ul className="space-y-4">
+                {aboutData.description.map((item, index) => (
+                    <li
+                        key={index}
+                        className="flex items-start gap-3 text-lg text-slate-600 dark:text-slate-300"
+                    >
+                        <span className="mt-3 h-2 w-2 rounded-full bg-blue-500 shrink-0" />
+
+                        <span className="leading-relaxed">
+                            {item}
+                        </span>
+                    </li>
+                ))}
+            </ul>
 
             <motion.div
                 variants={containerVariants}

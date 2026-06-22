@@ -4,7 +4,7 @@ import {
     type ButtonHTMLAttributes,
     type ReactNode,
 } from 'react';
-import { motion } from 'framer-motion';
+import { motion, type HTMLMotionProps } from 'framer-motion';
 
 type ButtonVariant =
     | 'primary'
@@ -23,7 +23,7 @@ type ButtonSize =
     | 'icon';
 
 export interface ButtonProps
-    extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'children'> {
+    extends Omit<HTMLMotionProps<'button'>, 'ref' | 'children'> {
     children?: ReactNode;
     variant?: ButtonVariant;
     size?: ButtonSize;
@@ -123,6 +123,8 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>(
             className
         );
 
+        const buttonProps = props as ButtonHTMLAttributes<HTMLButtonElement>;
+
         const content = (
             <>
                 {loading ? (
@@ -157,17 +159,17 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>(
 
         if (!animated) {
             return (
-                <butto
+                <button
                     ref={ref}
                     type={type}
                     disabled={isDisabled}
                     aria-disabled={isDisabled}
                     aria-busy={loading}
                     className={buttonClassName}
-                    {...props}
+                    {...buttonProps}
                 >
                     {content}
-                </butto>
+                </button>
             );
         }
 
@@ -196,7 +198,7 @@ const ButtonComponent = forwardRef<HTMLButtonElement, ButtonProps>(
                     duration: 0.15,
                 }}
                 className={buttonClassName}
-                {...props}
+                {...(props as HTMLMotionProps<'button'>)}
             >
                 {content}
             </motion.button>

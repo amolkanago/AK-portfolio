@@ -1,14 +1,8 @@
 import HeroBackground from "./HeroBackground";
 import HeroContent from "./HeroContent";
 import HeroImage from "./HeroImage";
-import ScrollIndicator from "./ScrollIndicator";
 
 export function Hero() {
-    const scrollToSection = (id: string) => {
-        document.getElementById(id)?.scrollIntoView({
-            behavior: "smooth",
-        });
-    };
 
     return (
         <section
@@ -38,10 +32,7 @@ export function Hero() {
                 "
             >
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <HeroContent
-                        scrollToSection={scrollToSection}
-                    />
-
+                    <HeroContent />
                     <HeroImage />
                 </div>
             </div>

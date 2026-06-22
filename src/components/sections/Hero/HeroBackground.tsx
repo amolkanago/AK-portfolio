@@ -19,8 +19,8 @@ export default function HeroBackground() {
                     absolute
                     -top-40
                     left-1/2
-                    h-[500px]
-                    w-[500px]
+                    h-125
+                    w-125
                     -translate-x-1/2
                     rounded-full
                     bg-blue-500/10
@@ -43,8 +43,8 @@ export default function HeroBackground() {
                     absolute
                     bottom-0
                     right-0
-                    h-[400px]
-                    w-[400px]
+                    h-100
+                    w-100
                     rounded-full
                     bg-cyan-500/10
                     blur-[120px]

@@ -1,5 +1,6 @@
-import { ReactNode, forwardRef } from 'react';
-import { motion } from 'framer-motion';
+import { forwardRef } from "react";
+import type { ReactNode } from "react";
+import { motion } from "framer-motion";
 
 interface CardProps {
   children: ReactNode;
@@ -9,25 +10,40 @@ interface CardProps {
 }
 
 export const Card = forwardRef<HTMLDivElement, CardProps>(
-  ({ children, className = '', hover = true, onClick }, ref) => {
+  ({ children, className = "", hover = true, onClick }, ref) => {
     return (
       <motion.div
         ref={ref}
-        whileHover={hover ? { y: -2 } : undefined}
-        transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+        whileHover={
+          hover
+            ? {
+              y: -4,
+              scale: 1.01,
+            }
+            : undefined
+        }
+        transition={{
+          type: "spring",
+          stiffness: 300,
+          damping: 25,
+        }}
         onClick={onClick}
         className={`
-          bg-white dark:bg-slate-800/80
-          rounded-2xl
-          shadow-lg dark:shadow-slate-900/30
-          border border-slate-200/80 dark:border-slate-700/50
-          backdrop-blur-sm
-          overflow-hidden
-          transition-colors duration-200
-          ${hover ? 'hover:border-primary-200/50 dark:hover:border-primary-500/20' : ''}
-          ${onClick ? 'cursor-pointer' : ''}
-          ${className}
-        `}
+                    bg-white
+                    dark:bg-slate-800/50
+                    border border-slate-200
+                    dark:border-slate-700/40
+                    rounded-xl
+                    shadow-sm
+                    dark:shadow-black/20
+                    transition-all duration-300
+                    ${hover
+            ? "hover:border-blue-500/30 hover:shadow-lg"
+            : ""
+          }
+                    ${onClick ? "cursor-pointer" : ""}
+                    ${className}
+                `}
       >
         {children}
       </motion.div>
@@ -35,7 +51,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
   }
 );
 
-Card.displayName = 'Card';
+Card.displayName = "Card";
 
 interface GlassCardProps {
   children: ReactNode;
@@ -43,20 +59,28 @@ interface GlassCardProps {
 }
 
 export const GlassCard = forwardRef<HTMLDivElement, GlassCardProps>(
-  ({ children, className = '' }, ref) => {
+  ({ children, className = "" }, ref) => {
     return (
       <motion.div
         ref={ref}
-        whileHover={{ scale: 1.01 }}
-        transition={{ type: 'spring', stiffness: 400, damping: 25 }}
+        whileHover={{
+          y: -2,
+        }}
+        transition={{
+          type: "spring",
+          stiffness: 300,
+          damping: 25,
+        }}
         className={`
-          bg-white/60 dark:bg-slate-800/60
-          backdrop-blur-xl
-          border border-white/20 dark:border-slate-700/30
-          rounded-2xl
-          shadow-xl dark:shadow-slate-900/30
-          ${className}
-        `}
+                    bg-white/10
+                    dark:bg-slate-800/40
+                    backdrop-blur-md
+                    border border-white/10
+                    dark:border-slate-700/30
+                    rounded-xl
+                    shadow-sm
+                    ${className}
+                `}
       >
         {children}
       </motion.div>
@@ -64,4 +88,4 @@ export const GlassCard = forwardRef<HTMLDivElement, GlassCardProps>(
   }
 );
 
-GlassCard.displayName = 'GlassCard';
+GlassCard.displayName = "GlassCard";

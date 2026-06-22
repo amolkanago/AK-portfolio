@@ -10,13 +10,9 @@ import {
 
 import { personalInfo } from "../../../data/portfolioData";
 
-interface HeroContentProps {
-    scrollToSection: (id: string) => void;
-}
 
-export default function HeroContent({
-    scrollToSection,
-}: HeroContentProps) {
+
+export default function HeroContent() {
     return (
         <motion.div
             initial={{
@@ -140,84 +136,84 @@ export default function HeroContent({
             {/* CTA */}
             <div className="flex flex-wrap items-center gap-5 mt-12">
                 {/* Primary CTA */}
-                <motion.button
+                <motion.a
                     whileHover={{
                         y: -4,
                         scale: 1.03,
                     }}
                     whileTap={{ scale: 0.97 }}
-                    onClick={() => scrollToSection("contact")}
+                    href={personalInfo.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="
-            group
-            relative
-            overflow-hidden
-            rounded-2xl
-            px-7
-            py-4
-            bg-gradient-to-r
-            from-blue-600
-            via-cyan-500
-            to-blue-500
-            text-white
-            font-semibold
-            shadow-[0_10px_30px_rgba(59,130,246,0.35)]
-            transition-all
-        "
+        group
+        relative
+        overflow-hidden
+        rounded-2xl
+        px-7
+        py-4
+        bg-gradient-to-r
+        from-blue-600
+        via-cyan-500
+        to-blue-500
+        text-white
+        font-semibold
+        shadow-[0_10px_30px_rgba(59,130,246,0.35)]
+        transition-all
+    "
                 >
-                    {/* <Briefcase/> */}
                     <span className="relative z-10 flex items-center">
-                        Hire Me
+                        Let's Connect
                         <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                     </span>
 
                     <div
                         className="
-                absolute
-                inset-0
-                opacity-0
-                group-hover:opacity-100
-                bg-white/10
-                transition-opacity
-            "
+            absolute
+            inset-0
+            opacity-0
+            group-hover:opacity-100
+            bg-white/10
+            transition-opacity
+        "
                     />
-                </motion.button>
+                </motion.a>
 
                 {/* Resume CTA */}
-                <motion.button
+                <motion.a
+                    href={personalInfo.resumeUrl}
+                    download="Amol-Resume.pdf"
                     whileHover={{
                         y: -4,
                         scale: 1.03,
                     }}
                     whileTap={{ scale: 0.97 }}
-                    onClick={() =>
-                        window.open(personalInfo.resumeUrl, "_blank")
-                    }
                     className="
-            group
-            flex
-            items-center
-            gap-3
-            px-7
-            py-4
-            rounded-2xl
-            border
-            border-slate-200
-            dark:border-slate-700
-            backdrop-blur-xl
-            bg-white/60
-            dark:bg-slate-900/50
-            text-slate-800
-            dark:text-slate-200
-            hover:border-blue-400
-            hover:shadow-xl
-            transition-all
-        "
+        group
+        flex
+        items-center
+        gap-3
+        px-7
+        py-4
+        rounded-2xl
+        border
+        border-slate-200
+        dark:border-slate-700
+        backdrop-blur-xl
+        bg-white/60
+        dark:bg-slate-900/50
+        text-slate-800
+        dark:text-slate-200
+        hover:border-blue-400
+        hover:shadow-xl
+        transition-all
+    "
                 >
                     <Download className="h-5 w-5 text-blue-500" />
                     <span className="font-medium">
                         Download Resume
                     </span>
-                </motion.button>
+                </motion.a>
             </div>
         </motion.div>
     );
