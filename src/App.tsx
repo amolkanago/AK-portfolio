@@ -9,7 +9,7 @@ import { Hero } from './components/sections/Hero';
 import { About } from './components/sections/About';
 import { Projects } from './components/sections/Projects';
 import { Experience } from './components/sections/Experience';
-import { Contact } from './components/sections/Contact/Contact';
+import { Skills } from './components/sections/Skills';
 
 function App() {
   return (
@@ -17,7 +17,6 @@ function App() {
       <LazyMotion features={domAnimation}>
         <div className="min-h-screen bg-white transition-colors duration-300 dark:bg-slate-900">
           <Navbar />
-
           <main
             id="main-content"
             tabIndex={-1}
@@ -25,11 +24,10 @@ function App() {
           >
             <Hero />
             <About />
+            <Skills />
             <Projects />
             <Experience />
-            <Contact />
           </main>
-
           <Footer />
         </div>
       </LazyMotion>

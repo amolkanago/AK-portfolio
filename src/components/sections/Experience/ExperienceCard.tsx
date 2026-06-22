@@ -35,7 +35,6 @@ export default function ExperienceCard({
             "
         >
             {/* Header */}
-
             <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
                 <div>
                     <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
@@ -65,7 +64,6 @@ export default function ExperienceCard({
             <div className="my-6 h-px bg-slate-200 dark:bg-slate-700" />
 
             {/* Responsibilities */}
-
             <div className="space-y-4">
                 {experience.responsibilities.map((item, index) => (
                     <motion.div
@@ -76,7 +74,7 @@ export default function ExperienceCard({
                         transition={{ delay: index * 0.05 }}
                         className="flex gap-3"
                     >
-                        <ChevronRight className="mt-1 h-4 w-4 flex-shrink-0 text-blue-500" />
+                        <ChevronRight className="mt-1 h-4 w-4 shrink-0 text-blue-500" />
 
                         <p className="leading-relaxed text-slate-600 dark:text-slate-300">
                             {item}
@@ -86,29 +84,21 @@ export default function ExperienceCard({
             </div>
 
             {/* Skills */}
-
             <div className="mt-8 flex flex-wrap gap-2">
-                {[
-                    "React",
-                    "REST APIs",
-                    "Authentication",
-                    "Frontend Architecture",
-                    "Agile",
-                ].map((tag) => (
+                {experience.achievements.map((tag) => (
                     <span
                         key={tag}
                         className="
-                            rounded-full
-                            border
-                            border-blue-500/20
-                            bg-blue-500/10
-                            px-3
-                            py-1
-                            text-xs
-                            font-medium
-                            text-blue-600
-                            dark:text-blue-400
-                        "
+      rounded-full
+      border
+      border-cyan-500/20
+      bg-cyan-500/10
+      px-3
+      py-1
+      text-xs
+      font-medium
+      text-cyan-400
+    "
                     >
                         {tag}
                     </span>
