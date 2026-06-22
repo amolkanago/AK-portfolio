@@ -64,7 +64,7 @@ export default function ExperienceCard({
             <div className="my-6 h-px bg-slate-200 dark:bg-slate-700" />
 
             {/* Responsibilities */}
-            <div className="space-y-4">
+            <div className="space-y-3">
                 {experience.responsibilities.map((item, index) => (
                     <motion.div
                         key={index}
@@ -76,7 +76,7 @@ export default function ExperienceCard({
                     >
                         <ChevronRight className="mt-1 h-4 w-4 shrink-0 text-blue-500" />
 
-                        <p className="leading-relaxed text-slate-600 dark:text-slate-300">
+                        <p className="text-sm md:text-base leading-7 text-slate-600 dark:text-slate-300">
                             {item}
                         </p>
                     </motion.div>

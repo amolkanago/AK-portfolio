@@ -12,9 +12,11 @@ export const personalInfo = {
 
 export const aboutData = {
   description: [
-    "I'm a Software Developer with more than a year of experience crafting scalable, responsive web applications using React.js and modern JavaScript technologies. My journey in enterprise software development has equipped me with expertise in healthcare applications, workflow-driven systems, and reusable component architecture.",
-    "I believe in writing clean, maintainable code that stands the test of time. My approach combines technical excellence with user-centric design, ensuring every application I build delivers exceptional experiences.",
-    "Currently, I'm expanding my horizons into full-stack development, diving deep into Next.js, Node.js, Express.js, and MongoDB to build production-grade applications."
+    "Software Developer with 3+ years of industry experience.",
+    "Built enterprise healthcare and workflow management applications.",
+    "Expertise in React.js, Next.js, TypeScript, and component-driven development.",
+    "Passionate about clean architecture, performance, and user experience.",
+    "Currently building full-stack solutions using Node.js, Express.js, and MongoDB."
   ],
   stats: [
     { label: 'Years Experience', value: '1+' },
@@ -102,116 +104,180 @@ export const experienceData = [
   },
 ];
 
+// export const projectsData = [
+//   {
+//     title: 'Enterprise Healthcare Data Platform',
+//     description:
+//       'Developed enterprise-grade healthcare data management and integration modules supporting data ingestion, cloud connectivity, synchronization workflows, and operational administration for healthcare organizations.',
+
+//     features: [
+//       'Connector Management',
+//       'Data Mart Administration',
+//       'User Management',
+//       'Cloud Destination Onboarding',
+//       'Data Synchronization',
+//       'SQL Operations',
+//       'Healthcare Data Workflows',
+//     ],
+
+//     responsibilities: [
+//       'Developed React.js modules for Connector Management, Data Mart Administration, User Management, and SQL Operations.',
+//       'Built onboarding and configuration workflows for Snowflake, Databricks, and Azure Blob Storage destinations.',
+//       'Designed stream selection, synchronization, and connection management interfaces supporting enterprise data replication.',
+//       'Implemented Common Data Model (CDM) integration and standardized healthcare data mapping workflows.',
+//       'Enhanced metadata visibility and connector administration dashboards to improve operational efficiency.',
+//       'Collaborated with backend teams to integrate REST APIs and streamline healthcare data management processes.',
+//     ],
+
+//     technologies: [
+//       'React.js',
+//       'TypeScript',
+//       'Redux',
+//       'REST APIs',
+//       'Snowflake',
+//       'Databricks',
+//       'Azure Blob Storage',
+//       'FHIR',
+//     ],
+
+//     impact:
+//       'Reduced cloud destination setup time by 30%, decreased configuration errors by 40%, and improved operational efficiency through workflow automation and dashboard enhancements.',
+//   },
+
+//   {
+//     title: 'Healthcare Data Exchange Platform',
+//     description:
+//       'Built frontend solutions enabling secure healthcare data exchange between organizations while supporting interoperability standards and complex data-sharing workflows.',
+
+//     features: [
+//       'Payer-to-Payer Workflows',
+//       'Data Exchange Dashboard',
+//       'FHIR Data Integration',
+//       'Workflow Monitoring',
+//       'API Integration',
+//       'Status Tracking',
+//     ],
+
+//     responsibilities: [
+//       'Developed frontend modules supporting payer-to-payer healthcare data exchange workflows.',
+//       'Integrated APIs for data retrieval, processing, and presentation of healthcare information.',
+//       'Built dashboards to monitor exchange activities, workflow status, and operational metrics.',
+//       'Implemented reusable React components to improve maintainability and consistency across modules.',
+//       'Collaborated with cross-functional teams to support healthcare interoperability requirements.',
+//     ],
+
+//     technologies: [
+//       'React.js',
+//       'TypeScript',
+//       'Redux',
+//       'REST APIs',
+//       'FHIR',
+//       'JavaScript',
+//     ],
+
+//     impact:
+//       'Enabled streamlined healthcare data exchange workflows and improved visibility into interoperability operations through scalable frontend solutions.',
+//   },
+
+//   {
+//     title: 'TasteHub',
+//     description:
+//       'A full-stack food ordering and restaurant management platform built using the MERN stack.',
+
+//     features: [
+//       'JWT Authentication',
+//       'Restaurant Discovery',
+//       'Advanced Search',
+//       'Menu Management',
+//       'Shopping Cart',
+//       'Order Management',
+//     ],
+
+//     responsibilities: [
+//       'Built a full-stack food ordering platform using React.js, Node.js, Express.js, and MongoDB.',
+//       'Implemented JWT-based authentication and authorization.',
+//       'Developed REST APIs for users, menus, carts, and orders.',
+//       'Designed responsive UI components using React and Tailwind CSS.',
+//     ],
+
+//     technologies: [
+//       'React.js',
+//       'Node.js',
+//       'Express.js',
+//       'MongoDB',
+//       'JWT',
+//       'Tailwind CSS',
+//     ],
+
+//     impact:
+//       'Demonstrated full-stack development expertise by building a scalable restaurant management platform.',
+//   },
+// ];
+
 export const projectsData = [
   {
-    title: 'Enterprise Healthcare Data Platform',
+    title: "Enterprise Healthcare Data Platform",
     description:
-      'Developed enterprise-grade healthcare data management and integration modules supporting data ingestion, cloud connectivity, synchronization workflows, and operational administration for healthcare organizations.',
+      "Developed healthcare data management modules for cloud onboarding, synchronization, and operational administration workflows.",
 
-    features: [
-      'Connector Management',
-      'Data Mart Administration',
-      'User Management',
-      'Cloud Destination Onboarding',
-      'Data Synchronization',
-      'SQL Operations',
-      'Healthcare Data Workflows',
-    ],
-
-    responsibilities: [
-      'Developed React.js modules for Connector Management, Data Mart Administration, User Management, and SQL Operations.',
-      'Built onboarding and configuration workflows for Snowflake, Databricks, and Azure Blob Storage destinations.',
-      'Designed stream selection, synchronization, and connection management interfaces supporting enterprise data replication.',
-      'Implemented Common Data Model (CDM) integration and standardized healthcare data mapping workflows.',
-      'Enhanced metadata visibility and connector administration dashboards to improve operational efficiency.',
-      'Collaborated with backend teams to integrate REST APIs and streamline healthcare data management processes.',
+    highlights: [
+      "Built Connector & Data Mart Management modules",
+      "Integrated Snowflake, Databricks, and Azure Blob Storage",
+      "Implemented healthcare data synchronization workflows",
     ],
 
     technologies: [
-      'React.js',
-      'TypeScript',
-      'Redux',
-      'REST APIs',
-      'Snowflake',
-      'Databricks',
-      'Azure Blob Storage',
-      'FHIR',
+      "React.js",
+      "TypeScript",
+      "Redux",
+      "REST APIs",
+      "Snowflake",
+      "Databricks",
+      "FHIR",
     ],
-
-    impact:
-      'Reduced cloud destination setup time by 30%, decreased configuration errors by 40%, and improved operational efficiency through workflow automation and dashboard enhancements.',
   },
 
   {
-    title: 'Healthcare Data Exchange Platform',
+    title: "Healthcare Data Exchange Platform",
     description:
-      'Built frontend solutions enabling secure healthcare data exchange between organizations while supporting interoperability standards and complex data-sharing workflows.',
+      "Built frontend solutions enabling secure healthcare data exchange and interoperability between organizations.",
 
-    features: [
-      'Payer-to-Payer Workflows',
-      'Data Exchange Dashboard',
-      'FHIR Data Integration',
-      'Workflow Monitoring',
-      'API Integration',
-      'Status Tracking',
-    ],
-
-    responsibilities: [
-      'Developed frontend modules supporting payer-to-payer healthcare data exchange workflows.',
-      'Integrated APIs for data retrieval, processing, and presentation of healthcare information.',
-      'Built dashboards to monitor exchange activities, workflow status, and operational metrics.',
-      'Implemented reusable React components to improve maintainability and consistency across modules.',
-      'Collaborated with cross-functional teams to support healthcare interoperability requirements.',
+    highlights: [
+      "Developed payer-to-payer workflow modules",
+      "Built monitoring dashboards and status tracking",
+      "Integrated FHIR-based healthcare APIs",
     ],
 
     technologies: [
-      'React.js',
-      'TypeScript',
-      'Redux',
-      'REST APIs',
-      'FHIR',
-      'JavaScript',
+      "React.js",
+      "TypeScript",
+      "Redux",
+      "REST APIs",
+      "FHIR",
     ],
-
-    impact:
-      'Enabled streamlined healthcare data exchange workflows and improved visibility into interoperability operations through scalable frontend solutions.',
   },
 
   {
-    title: 'TasteHub',
+    title: "TasteHub",
     description:
-      'A full-stack food ordering and restaurant management platform built using the MERN stack.',
+      "Full-stack food ordering and restaurant management platform built with the MERN stack.",
 
-    features: [
-      'JWT Authentication',
-      'Restaurant Discovery',
-      'Advanced Search',
-      'Menu Management',
-      'Shopping Cart',
-      'Order Management',
-    ],
-
-    responsibilities: [
-      'Built a full-stack food ordering platform using React.js, Node.js, Express.js, and MongoDB.',
-      'Implemented JWT-based authentication and authorization.',
-      'Developed REST APIs for users, menus, carts, and orders.',
-      'Designed responsive UI components using React and Tailwind CSS.',
+    highlights: [
+      "JWT authentication and authorization",
+      "Restaurant discovery and menu management",
+      "Order and cart management workflows",
     ],
 
     technologies: [
-      'React.js',
-      'Node.js',
-      'Express.js',
-      'MongoDB',
-      'JWT',
-      'Tailwind CSS',
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JWT",
+      "Tailwind CSS",
     ],
-
-    impact:
-      'Demonstrated full-stack development expertise by building a scalable restaurant management platform.',
   },
 ];
-
 
 export const servicesData = [
   {
