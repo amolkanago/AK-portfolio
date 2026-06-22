@@ -19,7 +19,7 @@ export function Section({
   return (
     <section
       id={id}
-      className={`py-12 lg:py-16 ${className}`}
+      className={`py-16 lg:py-20 ${className}`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         {(title || subtitle) && (
@@ -28,7 +28,7 @@ export function Section({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-10"
+            className="text-center mb-14"
           >
             {subtitle && (
               <span className="text-blue-600 dark:text-blue-400 font-semibold text-sm uppercase tracking-wider mb-3 block">
@@ -37,7 +37,7 @@ export function Section({
             )}
 
             {title && (
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white">
+              <h2 className="text-3xl sm:text-4xl lg:text-4xl font-bold text-slate-900 dark:text-white">
                 {title}
               </h2>
             )}
