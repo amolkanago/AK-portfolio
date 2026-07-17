@@ -1,26 +1,66 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from "react";
 
 export function useScrollProgress() {
-    const [progress, setProgress] = useState(0);
+    const [progress, setProgress] =
+        useState(0);
 
     useEffect(() => {
         let ticking = false;
 
+        const updateProgress = () => {
+            ticking = false;
+
+            const scrollTop =
+                window.scrollY;
+
+            const scrollHeight =
+                document.documentElement
+                    .scrollHeight -
+                window.innerHeight;
+
+            const percentage =
+                scrollHeight > 0
+                    ? (scrollTop /
+                        scrollHeight) *
+                    100
+                    : 0;
+
+            setProgress(percentage);
+        };
+
+        updateProgress();
+
         const handleScroll = () => {
             if (!ticking) {
-                window.requestAnimationFrame(() => {
-                    const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-                    const scrollPosition = window.scrollY;
-                    const newProgress = totalHeight > 0 ? (scrollPosition / totalHeight) * 100 : 0;
-                    setProgress(Math.min(100, Math.max(0, newProgress)));
-                    ticking = false;
-                });
+                requestAnimationFrame(
+                    updateProgress
+                );
                 ticking = true;
             }
         };
 
-        window.addEventListener('scroll', handleScroll, { passive: true });
-        return () => window.removeEventListener('scroll', handleScroll);
+        window.addEventListener(
+            "scroll",
+            handleScroll,
+            { passive: true }
+        );
+
+        window.addEventListener(
+            "resize",
+            updateProgress
+        );
+
+        return () => {
+            window.removeEventListener(
+                "scroll",
+                handleScroll
+            );
+
+            window.removeEventListener(
+                "resize",
+                updateProgress
+            );
+        };
     }, []);
 
     return progress;

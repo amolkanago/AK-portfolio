@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import {
     motion,
     AnimatePresence,
@@ -12,123 +12,53 @@ import { NAV_LINKS } from '../../../data/navigation';
 import { NavbarLogo } from './NavbarLogo';
 import { NavbarLinks } from './NavbarLinks';
 import { ThemeToggle } from './ThemeToggle';
+import { useActiveSection } from '../../../hooks/useActiveSection';
+import { useScrolled } from '../../../hooks/useScrolled';
+import { useEscapeKey } from '../../../hooks/useEscapeKey';
+import { useBodyScrollLock } from '../../../hooks/useBodyScrollLock';
 
 export function Navbar() {
-    const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] =
         useState(false);
 
-    const [activeSection, setActiveSection] =
-        useState<string | null>(null);
-
     const progress = useScrollProgress();
-    const prefersReducedMotion = useReducedMotion();
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
-        };
+    const prefersReducedMotion =
+        useReducedMotion();
 
-        handleScroll();
+    const isScrolled = useScrolled();
 
-        window.addEventListener('scroll', handleScroll, {
-            passive: true,
-        });
+    const activeSection = useActiveSection({
+        ids: NAV_LINKS.map((link) =>
+            link.href.replace("#", "")
+        ),
+        offset: 120,
+    });
 
-        return () =>
-            window.removeEventListener(
-                'scroll',
-                handleScroll
-            );
-    }, []);
+    useEscapeKey(
+        () => setIsMobileMenuOpen(false),
+        isMobileMenuOpen
+    );
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                const visibleSections = entries
-                    .filter((entry) => entry.isIntersecting)
-                    .sort(
-                        (a, b) =>
-                            b.intersectionRatio -
-                            a.intersectionRatio
-                    );
+    useBodyScrollLock(isMobileMenuOpen);
 
-                if (visibleSections.length > 0) {
-                    setActiveSection(
-                        visibleSections[0].target.id
-                    );
-                }
-            },
-            {
-                root: null,
-                rootMargin: '-15% 0px -60% 0px',
-                threshold: [0.2, 0.4, 0.6, 0.8],
-            }
-        );
-
-        NAV_LINKS.forEach((link) => {
-            const section = document.getElementById(
-                link.href.replace('#', '')
-            );
-
-            if (section) {
-                observer.observe(section);
-            }
-        });
-
-        return () => observer.disconnect();
-    }, []);
-
-    useEffect(() => {
-        const handleEscape = (
-            event: KeyboardEvent
-        ) => {
-            if (
-                event.key === 'Escape' &&
-                isMobileMenuOpen
-            ) {
-                setIsMobileMenuOpen(false);
-            }
-        };
-
-        document.addEventListener(
-            'keydown',
-            handleEscape
-        );
-
-        return () =>
-            document.removeEventListener(
-                'keydown',
-                handleEscape
-            );
-    }, [isMobileMenuOpen]);
-
-    useEffect(() => {
-        const originalOverflow =
-            document.body.style.overflow;
-
-        if (isMobileMenuOpen) {
-            document.body.style.overflow = 'hidden';
-        }
-
-        return () => {
-            document.body.style.overflow =
-                originalOverflow;
-        };
-    }, [isMobileMenuOpen]);
+    const NAVBAR_HEIGHT = 80;
 
     const scrollToSection = useCallback(
         (href: string) => {
-            const id = href.replace('#', '');
-
-            const element =
-                document.getElementById(id);
+            const id = href.replace("#", "");
+            const element = document.getElementById(id);
 
             if (!element) return;
 
-            element.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start',
+            const top =
+                window.scrollY +
+                element.getBoundingClientRect().top -
+                NAVBAR_HEIGHT;
+
+            window.scrollTo({
+                top,
+                behavior: "smooth",
             });
 
             setIsMobileMenuOpen(false);
@@ -139,7 +69,7 @@ export function Navbar() {
     const scrollToTop = useCallback(() => {
         window.scrollTo({
             top: 0,
-            behavior: 'smooth',
+            behavior: "smooth",
         });
 
         setIsMobileMenuOpen(false);
@@ -183,24 +113,59 @@ export function Navbar() {
                         />
 
                         {/* Desktop Nav */}
-                        <div className="hidden items-center gap-1 lg:flex">
+                        <nav className="hidden items-center gap-1 lg:flex lg:items-center lg:gap-2 xl:gap-4" aria-label='Primary Navigation'>
                             <NavbarLinks
                                 links={NAV_LINKS}
                                 activeSection={activeSection}
                                 onNavigate={scrollToSection}
                             />
-                        </div>
+                        </nav>
 
-                        <div className="flex items-center gap-3">
+                        {/* Actions */}
+                        <div className="flex items-center gap-2 sm:gap-3">
                             <ThemeToggle />
 
                             <button
+                                type="button"
+                                aria-label={
+                                    isMobileMenuOpen
+                                        ? "Close Menu"
+                                        : "Open Menu"
+                                }
+
                                 onClick={() =>
                                     setIsMobileMenuOpen(
                                         (prev) => !prev
                                     )
                                 }
-                                className="rounded-lg bg-slate-100 p-2 dark:bg-slate-800 lg:hidden"
+                                className="
+                    inline-flex
+                    h-10
+                    w-10
+                    items-center
+                    justify-center
+                    rounded-xl
+                    border
+                    border-slate-200/80
+                    bg-white/80
+                    text-slate-700
+                    shadow-sm
+                    backdrop-blur
+                    transition-all
+                    duration-200
+                    hover:bg-slate-100
+                    hover:shadow-md
+                    active:scale-95
+                    focus:outline-none
+                    focus-visible:ring-2
+                    focus-visible:ring-sky-500
+                    focus-visible:ring-offset-2
+                    dark:border-slate-700
+                    dark:bg-slate-900/80
+                    dark:text-slate-200
+                    dark:hover:bg-slate-800
+                    dark:focus-visible:ring-offset-slate-950
+                    lg:hidden"
                             >
                                 {isMobileMenuOpen ? (
                                     <X className="h-5 w-5" />
@@ -213,9 +178,12 @@ export function Navbar() {
                 </div>
 
                 {/* Mobile Menu */}
-                <AnimatePresence>
+                <AnimatePresence mode="wait">
                     {isMobileMenuOpen && (
-                        <motion.div
+                        <motion.nav
+                            id="mobile-navigation"
+                            role="navigation"
+                            aria-label="Mobile Navigation"
                             initial={{
                                 opacity: 0,
                                 height: 0,
@@ -238,7 +206,7 @@ export function Navbar() {
                                     onNavigate={scrollToSection}
                                 />
                             </div>
-                        </motion.div>
+                        </motion.nav>
                     )}
                 </AnimatePresence>
             </motion.nav>
