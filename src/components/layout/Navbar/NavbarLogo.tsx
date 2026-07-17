@@ -9,28 +9,79 @@ export function NavbarLogo({
 
     return (
         <motion.button
+            type="button"
+            aria-label="Go to homepage"
+            onClick={onClick}
             whileHover={
                 prefersReducedMotion
                     ? undefined
-                    : { scale: 1.05 }
+                    : {
+                        scale: 1.03,
+                        y: -1,
+                    }
             }
             whileTap={
                 prefersReducedMotion
                     ? undefined
-                    : { scale: 0.95 }
+                    : {
+                        scale: 0.97,
+                    }
             }
-            onClick={onClick}
-            className="flex items-center gap-2 rounded-lg font-bold text-slate-800 focus-ring dark:text-white"
-            aria-label="Amol Kanago Home"
+            transition={{
+                duration: 0.2,
+                ease: "easeOut",
+            }}
+            className="
+        group
+        inline-flex
+        items-center
+        gap-3
+        rounded-xl
+        px-1
+        py-1
+        text-slate-900
+        transition-colors
+        focus-visible:outline-none
+        focus-visible:ring-2
+        focus-visible:ring-primary-500
+        focus-visible:ring-offset-2
+        dark:text-white
+        dark:focus-visible:ring-offset-slate-950
+    "
         >
-            <div className="rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 p-2">
+            <div
+                className="
+            flex
+            h-10
+            w-10
+            items-center
+            justify-center
+            rounded-xl
+            bg-gradient-to-br
+            from-primary-500
+            via-primary-600
+            to-accent-500
+            shadow-md
+            transition-all
+            duration-300
+            group-hover:shadow-lg
+            group-hover:shadow-primary-500/25
+        "
+            >
                 <Code2
                     className="h-5 w-5 text-white"
                     aria-hidden="true"
                 />
             </div>
 
-            <span className="text-xl">
+            <span
+                className="
+            text-lg
+            font-semibold
+            tracking-tight
+            sm:text-xl
+        "
+            >
                 Amol
             </span>
         </motion.button>
