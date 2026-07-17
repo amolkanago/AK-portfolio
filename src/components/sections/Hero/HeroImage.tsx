@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import profileImage from "../../../assets/images/profile-pic.jpg";
+import profileImage from "../../../assets/images/hero-image.png";
 import { personalInfo } from "../../../data/portfolioData";
 
 export default function HeroImage() {
@@ -59,7 +59,7 @@ export default function HeroImage() {
                     <img
                         src={profileImage}
                         alt={personalInfo.name}
-                        className="h-full w-full object-cover"
+                        className="h-full w-full object-cover object-top"
                     />
                 </div>
             </motion.div>
