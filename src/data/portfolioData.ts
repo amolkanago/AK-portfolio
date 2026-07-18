@@ -4,7 +4,7 @@ export const personalInfo = {
   tagline: 'Building scalable, user-focused web applications with React.js and modern web technologies.',
   email: 'amolkanago0@gmail.com',
   phone: '+91 7795070927',
-  linkedin: 'https://linkedin.com/in/amol-kanago-a95a99189',
+  linkedin: 'https://linkedin.com/in/amol-kanago',
   github: 'https://github.com/amolkanago',
   location: 'Belgaum, Karnataka, India',
   resumeUrl: '/documents/amol_kanago.pdf',

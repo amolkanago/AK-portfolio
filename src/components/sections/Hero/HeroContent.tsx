@@ -28,38 +28,16 @@ export default function HeroContent() {
             transition={{ duration: 0.8 }}
         >
             {/* Badge */}
-            <div
-                className="
-                    inline-flex
-                    items-center
-                    gap-2
-                    px-4
-                    py-2
-                    rounded-full
-                    border
-                    border-emerald-500/20
-                    bg-emerald-500/10
-                    mb-6
-                "
-            >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-500/20 bg-emerald-500/10 backdrop:blur-md shadow-sm mb-6">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-
                 <span className="text-sm font-medium text-emerald-600 dark:text-emerald-400">
-                    Available for Opportunities
+                    React • Next.js • TypeScript
                 </span>
             </div>
 
             {/* Role */}
             <p
-                className="
-                    text-sm
-                    uppercase
-                    tracking-[0.25em]
-                    font-semibold
-                    text-blue-600
-                    dark:text-blue-400
-                    mb-4
-                "
+                className="text-sm uppercase tracking-[0.18em] font-semibold  text-blue-600 dark:text-blue-400 mb-4 md:text-base"
             >
                 Software Developer
             </p>
@@ -72,7 +50,7 @@ export default function HeroContent() {
                     lg:text-6xl
                     font-bold
                     tracking-tight
-                    leading-tight
+                    leading-[1.05]
                     text-slate-900
                     dark:text-white
                 "
@@ -82,7 +60,8 @@ export default function HeroContent() {
                     className="
                         bg-gradient-to-r
                         from-blue-600
-                        to-cyan-500
+                        via-500
+                        to-sky-400
                         bg-clip-text
                         text-transparent
                     "
@@ -109,9 +88,11 @@ export default function HeroContent() {
             <p
                 className="
                     mt-6
-                    max-w-xl
+                    max-w-2xl
                     text-slate-600
                     dark:text-slate-400
+                    text-lg
+                    md:text-xl
                     leading-8
                 "
             >
@@ -121,20 +102,32 @@ export default function HeroContent() {
             {/* Location */}
             <div
                 className="
-                    flex
-                    items-center
-                    gap-2
-                    mt-6
-                    text-slate-500
-                    dark:text-slate-400
-                "
+    inline-flex
+    items-center
+    gap-2
+    mt-8
+    px-4
+    py-2
+    rounded-full
+    bg-slate-100
+    dark:bg-slate-800
+    text-sm
+    text-slate-600
+    dark:text-slate-300
+    border
+    border-slate-200
+    dark:border-slate-700
+  "
             >
-                <MapPin className="w-4 h-4" />
+                <MapPin
+                    className="h-4 w-4 text-blue-500"
+                    aria-hidden="true"
+                />
                 <span>{personalInfo.location}</span>
             </div>
 
             {/* CTA */}
-            <div className="flex flex-wrap items-center gap-5 mt-12">
+            <div className="flex flex-wrap items-center gap-4 mt-12">
                 {/* Primary CTA */}
                 <motion.a
                     whileHover={{
@@ -146,37 +139,40 @@ export default function HeroContent() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="
-        group
-        relative
-        overflow-hidden
-        rounded-2xl
-        px-7
-        py-4
-        bg-gradient-to-r
-        from-blue-600
-        via-cyan-500
-        to-blue-500
-        text-white
-        font-semibold
-        shadow-[0_10px_30px_rgba(59,130,246,0.35)]
-        transition-all
-    "
+group
+relative
+flex
+items-center
+justify-center
+overflow-hidden
+rounded-2xl
+px-7
+py-4
+font-semibold
+text-white
+bg-gradient-to-r
+from-blue-600
+via-cyan-500
+to-blue-500
+shadow-[0_10px_30px_rgba(59,130,246,.35)]
+transition-all
+duration-300
+ease-out
+hover:brightness-110
+hover:shadow-[0_18px_45px_rgba(37,99,235,.45)]
+focus-visible:outline-none
+focus-visible:ring-4
+focus-visible:ring-blue-500/30
+focus-visible:ring-offset-2
+dark:focus-visible:ring-offset-slate-900
+"
                 >
                     <span className="relative z-10 flex items-center">
                         Let's Connect
                         <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                     </span>
 
-                    <div
-                        className="
-            absolute
-            inset-0
-            opacity-0
-            group-hover:opacity-100
-            bg-white/10
-            transition-opacity
-        "
-                    />
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 bg-white/10 transition-opacity" />
                 </motion.a>
 
                 {/* Resume CTA */}
@@ -189,32 +185,43 @@ export default function HeroContent() {
                     }}
                     whileTap={{ scale: 0.97 }}
                     className="
-        group
-        flex
-        items-center
-        gap-3
-        px-7
-        py-4
-        rounded-2xl
-        border
-        border-slate-200
-        dark:border-slate-700
-        backdrop-blur-xl
-        bg-white/60
-        dark:bg-slate-900/50
-        text-slate-800
-        dark:text-slate-200
-        hover:border-blue-400
-        hover:shadow-xl
-        transition-all
-    "
+group
+flex
+items-center
+justify-center
+gap-3
+rounded-2xl
+border
+border-slate-200
+dark:border-slate-700
+bg-white/70
+dark:bg-slate-900/60
+backdrop-blur-xl
+px-7
+py-4
+text-slate-800
+dark:text-slate-200
+transition-all
+duration-300
+ease-out
+hover:-translate-y-1
+hover:border-blue-500
+hover:bg-white
+dark:hover:bg-slate-800
+hover:shadow-xl
+focus-visible:outline-none
+focus-visible:ring-4
+focus-visible:ring-blue-500/30
+focus-visible:ring-offset-2
+dark:focus-visible:ring-offset-slate-900
+"
                 >
                     <Download className="h-5 w-5 text-blue-500" />
-                    <span className="font-medium">
-                        Download Resume
-                    </span>
+                    <span className="font-medium">Download Resume</span>
                 </motion.a>
+
             </div>
+
         </motion.div>
     );
 }
