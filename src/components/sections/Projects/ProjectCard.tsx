@@ -60,16 +60,30 @@ export function ProjectCard({
                 <div className="overflow-hidden">
                     <img
                         src={project.image}
+                        srcSet={`
+        ${project.image} 400w,
+        ${project.image} 800w
+    `}
+                        sizes="
+        (max-width:640px) 100vw,
+        (max-width:1024px) 50vw,
+        33vw
+    "
                         alt={project.title}
                         loading="lazy"
+                        decoding="async"
+                        fetchPriority="low"
+                        width="400"
+                        height="225"
                         className="
-                            aspect-[16/9]
-                            w-full
-                            object-cover
-                            transition-transform
-                            duration-700
-                            group-hover:scale-105
-                        "
+        aspect-video
+        w-full
+        object-cover
+        object-left
+        transition-transform
+        duration-700
+        group-hover:scale-105
+    "
                     />
                 </div>
 
