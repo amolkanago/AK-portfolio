@@ -11,9 +11,14 @@ export function About() {
             subtitle="Introduction"
             className="bg-white dark:bg-slate-900"
         >
-            <div className="grid lg:grid-cols-5 gap-12 items-start">
-                <AboutInfoCards />
-                <AboutContent />
+            <div className="grid gap-12 lg:grid-cols-5 items-start">
+                <aside className="lg:col-span-2 lg:sticky lg:top-24">
+                    <AboutInfoCards />
+                </aside>
+
+                <div className="lg:col-span-3">
+                    <AboutContent />
+                </div>
             </div>
         </Section>
     );

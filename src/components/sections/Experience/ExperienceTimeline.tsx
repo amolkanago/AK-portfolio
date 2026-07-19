@@ -23,78 +23,53 @@ export default function ExperienceTimeline() {
             className="relative mx-auto max-w-6xl"
         >
             {experienceData.map((experience, index) => (
-                <motion.div
+                <motion.article
                     key={`${experience.company}-${index}`}
                     initial={{
                         opacity: 0,
-                        y: 80,
-                        scale: 0.92,
-                        filter: "blur(12px)",
+                        y: 60,
                     }}
                     whileInView={{
                         opacity: 1,
                         y: 0,
-                        scale: 1,
-                        filter: "blur(0px)",
                     }}
                     viewport={{
                         once: true,
-                        amount: 0.15,
+                        amount: 0.2,
                     }}
                     transition={{
-                        duration: 0.9,
-                        delay: index * 0.12,
-                        ease: [0.16, 1, 0.3, 1],
+                        duration: 0.6,
+                        delay: index * 0.08,
+                        ease: [0.22, 1, 0.36, 1],
                     }}
-                    className="group relative pb-20 last:pb-0"
+                    className="group relative pb-16 last:pb-0"
                 >
                     {/* Timeline Rail */}
 
                     {index !== experienceData.length - 1 && (
                         <>
-                            <div className="absolute left-6 top-16 bottom-0 w-px bg-white/10" />
+                            <div className="absolute left-5 top-14 bottom-0 w-px bg-white/10" />
 
                             <motion.div
                                 initial={{ scaleY: 0 }}
                                 whileInView={{ scaleY: 1 }}
                                 viewport={{ once: true }}
                                 transition={{
-                                    duration: 1.4,
+                                    duration: 1,
                                     ease: "easeOut",
                                 }}
-                                style={{
-                                    originY: 0,
-                                }}
+                                style={{ originY: 0 }}
                                 className="
-                                    absolute
-                                    left-6
-                                    top-16
-                                    bottom-0
-                                    w-[2px]
-                                    bg-gradient-to-b
-                                    from-cyan-400
-                                    via-blue-500
-                                    to-purple-500
-                                "
-                            />
-
-                            <div
-                                className="
-                                    absolute
-                                    left-6
-                                    top-16
-                                    bottom-0
-                                    w-[2px]
-                                    bg-gradient-to-b
-                                    from-cyan-400
-                                    via-blue-500
-                                    to-purple-500
-                                    blur-sm
-                                    opacity-30
-                                    transition-all
-                                    duration-500
-                                    group-hover:opacity-100
-                                "
+                            absolute
+                            left-5
+                            top-14
+                            bottom-0
+                            w-px
+                            bg-gradient-to-b
+                            from-cyan-400
+                            via-sky-500/70
+                            to-transparent
+                        "
                             />
                         </>
                     )}
@@ -103,179 +78,152 @@ export default function ExperienceTimeline() {
 
                     <motion.div
                         initial={{
-                            scale: 0,
-                            rotate: -180,
+                            scale: 0.8,
                             opacity: 0,
                         }}
                         whileInView={{
                             scale: 1,
-                            rotate: 0,
                             opacity: 1,
                         }}
                         whileHover={{
-                            scale: 1.15,
-                            rotate: 12,
+                            rotate: 6,
                         }}
-                        viewport={{ once: true }}
                         transition={{
-                            type: "spring",
-                            stiffness: 250,
-                            damping: 14,
-                            delay: index * 0.12,
+                            duration: 0.35,
                         }}
-                        className="
-                            absolute
-                            left-0
-                            top-8
-                            z-20
-                        "
+                        className="absolute left-0 top-6 z-20"
                     >
                         {/* Glow */}
 
                         <div
                             className="
-                                absolute
-                                inset-0
-                                scale-[1.8]
-                                rounded-full
-                                bg-cyan-500/30
-                                blur-xl
-                                opacity-0
-                                transition-all
-                                duration-500
-                                group-hover:opacity-100
-                            "
+                        absolute
+                        inset-0
+                        rounded-full
+                        bg-cyan-400/20
+                        blur-xl
+                        opacity-0
+                        transition-opacity
+                        duration-300
+                        group-hover:opacity-100
+                    "
                         />
-
-                        {/* Pulse Ring */}
 
                         <div
                             className="
-                                absolute
-                                inset-0
-                                rounded-full
-                                border
-                                border-cyan-400/30
-                                animate-pulse
-                            "
-                        />
-
-                        {/* Node */}
-
-                        <div
-                            className="
-                                relative
-                                flex
-                                h-12
-                                w-12
-                                items-center
-                                justify-center
-                                rounded-2xl
-                                border
-                                border-white/10
-                                bg-slate-900/80
-                                backdrop-blur-xl
-                                shadow-lg
-                                shadow-cyan-500/20
-                                transition-all
-                                duration-500
-                                group-hover:border-cyan-400/40
-                                group-hover:shadow-cyan-500/50
-                            "
+                        relative
+                        flex
+                        h-10
+                        w-10
+                        items-center
+                        justify-center
+                        rounded-xl
+                        border
+                        border-white/[0.08]
+                        bg-slate-900/70
+                        backdrop-blur-2xl
+                        shadow-[0_10px_40px_rgba(6,182,212,0.15)]
+                        transition-all
+                        duration-300
+                        group-hover:border-cyan-400/40
+                        group-hover:shadow-[0_18px_45px_rgba(6,182,212,0.25)]
+                    "
                         >
                             <Briefcase
                                 className="
-                                    h-5
-                                    w-5
-                                    text-cyan-400
-                                    transition-all
-                                    duration-500
-                                    group-hover:scale-125
-                                "
+                            h-5
+                            w-5
+                            text-cyan-400
+                            transition-transform
+                            duration-300
+                            group-hover:scale-110
+                        "
                             />
                         </div>
                     </motion.div>
 
-                    {/* Content */}
+                    {/* Card */}
 
                     <motion.div
-                        animate={{
-                            y: [0, -4, 0],
+                        whileHover={{
+                            y: -6,
                         }}
                         transition={{
-                            y: {
-                                duration: 5,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                            },
+                            duration: 0.25,
                         }}
-                        whileHover={{
-                            y: -10,
-                            scale: 1.015,
+                        className="ml-16 md:ml-20"
+                        style={{
+                            willChange: "transform",
                         }}
-                        className="ml-20"
                     >
-                        <div className="relative overflow-hidden rounded-3xl">
-                            {/* Spotlight */}
+                        <div
+                            className="
+                        relative
+                        overflow-hidden
+                        rounded-[28px]
+                    "
+                        >
+                            {/* Hover Overlay */}
 
                             <div
                                 className="
-                                    pointer-events-none
-                                    absolute
-                                    inset-0
-                                    opacity-0
-                                    transition-all
-                                    duration-500
-                                    group-hover:opacity-100
-                                "
-                            >
-                                <div
-                                    className="
-                                        absolute
-                                        inset-0
-                                        bg-gradient-to-r
-                                        from-cyan-500/5
-                                        via-cyan-500/10
-                                        to-purple-500/5
-                                    "
-                                />
+                            pointer-events-none
+                            absolute
+                            inset-0
+                            rounded-[28px]
+                            bg-gradient-to-br
+                            from-cyan-500/5
+                            via-transparent
+                            to-purple-500/5
+                            opacity-0
+                            transition-opacity
+                            duration-300
+                            group-hover:opacity-100
+                        "
+                            />
 
-                                <div
-                                    className="
-                                        absolute
-                                        -top-24
-                                        left-1/2
-                                        h-48
-                                        w-48
-                                        -translate-x-1/2
-                                        rounded-full
-                                        bg-cyan-500/10
-                                        blur-3xl
-                                    "
-                                />
-                            </div>
-
-                            {/* Glow Border */}
+                            {/* Border */}
 
                             <div
                                 className="
-                                    absolute
-                                    inset-0
-                                    rounded-3xl
-                                    border
-                                    border-transparent
-                                    transition-all
-                                    duration-500
-                                    group-hover:border-cyan-500/20
-                                "
+                            absolute
+                            inset-0
+                            rounded-[28px]
+                            border
+                            border-white/[0.06]
+                            transition-all
+                            duration-300
+                            group-hover:border-cyan-400/20
+                        "
+                            />
+
+                            {/* Soft Spotlight */}
+
+                            <div
+                                className="
+                            pointer-events-none
+                            absolute
+                            left-1/2
+                            top-0
+                            h-48
+                            w-48
+                            -translate-x-1/2
+                            rounded-full
+                            bg-cyan-400/10
+                            blur-3xl
+                            opacity-0
+                            transition-opacity
+                            duration-500
+                            group-hover:opacity-100
+                        "
                             />
 
                             <div
                                 className="
-                                    transition-all
-                                    duration-500
-                                    group-hover:drop-shadow-[0_20px_50px_rgba(34,211,238,0.15)]
-                                "
+                            transition-shadow
+                            duration-300
+                            group-hover:shadow-[0_20px_60px_rgba(8,145,178,0.12)]
+                        "
                             >
                                 <ExperienceCard
                                     experience={experience}
@@ -283,7 +231,7 @@ export default function ExperienceTimeline() {
                             </div>
                         </div>
                     </motion.div>
-                </motion.div>
+                </motion.article>
             ))}
         </motion.div>
     );
