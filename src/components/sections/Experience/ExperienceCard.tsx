@@ -19,91 +19,254 @@ export default function ExperienceCard({
     return (
         <div
             className="
-                rounded-3xl
-                border
-                border-slate-200/60
-                dark:border-slate-700/60
-                bg-white
-                dark:bg-slate-800/40
-                backdrop-blur-md
-                p-8
-                shadow-lg
-                transition-all
-                duration-300
-                hover:shadow-2xl
-                hover:-translate-y-1
-            "
-        >
-            {/* Header */}
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-                <div>
-                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
-                        {experience.title}
-                    </h3>
-
-                    <p className="mt-2 text-lg font-semibold text-blue-600 dark:text-blue-400">
-                        {experience.company}
-                    </p>
-                </div>
-
-                <div className="flex flex-wrap gap-4 text-sm text-slate-500 dark:text-slate-400">
-                    <div className="flex items-center gap-2">
-                        <Calendar className="h-4 w-4" />
-                        <span>{experience.duration}</span>
-                    </div>
-
-                    <div className="flex items-center gap-2">
-                        <MapPin className="h-4 w-4" />
-                        <span>{experience.location}</span>
-                    </div>
-                </div>
-            </div>
-
-            {/* Divider */}
-
-            <div className="my-6 h-px bg-slate-200 dark:bg-slate-700" />
-
-            {/* Responsibilities */}
-            <div className="space-y-3">
-                {experience.responsibilities.map((item, index) => (
-                    <motion.div
-                        key={index}
-                        initial={{ opacity: 0, x: -15 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.05 }}
-                        className="flex gap-3"
-                    >
-                        <ChevronRight className="mt-1 h-4 w-4 shrink-0 text-blue-500" />
-
-                        <p className="text-sm md:text-base leading-7 text-slate-600 dark:text-slate-300">
-                            {item}
-                        </p>
-                    </motion.div>
-                ))}
-            </div>
-
-            {/* Skills */}
-            <div className="mt-8 flex flex-wrap gap-2">
-                {experience.achievements.map((tag) => (
-                    <span
-                        key={tag}
-                        className="
-      rounded-full
-      border
-      border-cyan-500/20
-      bg-cyan-500/10
-      px-3
-      py-1
-      text-xs
-      font-medium
-      text-cyan-400
+        relative
+        overflow-hidden
+        rounded-[28px]
+        border
+        border-white/8
+        bg-white/80
+        dark:bg-slate-900/60
+        backdrop-blur-2xl
+        shadow-[0_8px_40px_rgba(15,23,42,0.08)]
+        transition-all
+        duration-300
+        hover:-translate-y-1.5
+        hover:border-cyan-400/25
+        hover:shadow-[0_20px_60px_rgba(6,182,212,0.12)]
     "
-                    >
-                        {tag}
-                    </span>
-                ))}
+        >
+            {/* Gradient Overlay */}
+
+            <div
+                className="
+            pointer-events-none
+            absolute
+            inset-0
+            bg-gradient-to-br
+            from-cyan-500/3
+            via-transparent
+            to-violet-500/3
+            opacity-0
+            transition-opacity
+            duration-300
+            group-hover:opacity-100
+        "
+            />
+
+            {/* Top Accent */}
+
+            <div
+                className="
+            absolute
+            inset-x-0
+            top-0
+            h-px
+            bg-gradient-to-r
+            from-transparent
+            via-cyan-400/50
+            to-transparent
+        "
+            />
+
+            <div className="relative p-8 md:p-10">
+
+                {/* Header */}
+
+                <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
+
+                    <div className="space-y-3">
+
+                        <h3
+                            className="
+                        text-2xl
+                        font-bold
+                        tracking-tight
+                        text-slate-900
+                        dark:text-white
+                    "
+                        >
+                            {experience.title}
+                        </h3>
+
+                        <div className="flex items-center gap-3">
+
+                            <div
+                                className="
+                            h-2
+                            w-2
+                            rounded-full
+                            bg-cyan-400
+                            shadow-[0_0_12px_rgba(34,211,238,0.8)]
+                        "
+                            />
+
+                            <p
+                                className="
+                            text-lg
+                            font-semibold
+                            text-cyan-500
+                            dark:text-cyan-400
+                        "
+                            >
+                                {experience.company}
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div className="flex flex-wrap gap-5 text-sm">
+
+                        <div
+                            className="
+                        flex
+                        items-center
+                        gap-2
+                        rounded-full
+                        border
+                        border-white/8
+                        bg-slate-100/70
+                        dark:bg-slate-800/60
+                        px-4
+                        py-2
+                        text-slate-600
+                        dark:text-slate-300
+                    "
+                        >
+                            <Calendar className="h-4 w-4 text-cyan-400" />
+                            <span>{experience.duration}</span>
+                        </div>
+
+                        <div
+                            className="
+                        flex
+                        items-center
+                        gap-2
+                        rounded-full
+                        border
+                        border-white/8
+                        bg-slate-100/70
+                        dark:bg-slate-800/60
+                        px-4
+                        py-2
+                        text-slate-600
+                        dark:text-slate-300
+                    "
+                        >
+                            <MapPin className="h-4 w-4 text-cyan-400" />
+                            <span>{experience.location}</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                {/* Divider */}
+
+                <div
+                    className="
+                my-8
+                h-px
+                bg-gradient-to-r
+                from-transparent
+                via-slate-300/70
+                to-transparent
+                dark:via-slate-700
+            "
+                />
+
+                {/* Responsibilities */}
+
+                <div className="space-y-5">
+
+                    {experience.responsibilities.map((item, index) => (
+
+                        <motion.div
+                            key={index}
+                            initial={{
+                                opacity: 0,
+                                x: -20,
+                            }}
+                            whileInView={{
+                                opacity: 1,
+                                x: 0,
+                            }}
+                            viewport={{
+                                once: true,
+                            }}
+                            transition={{
+                                duration: 0.35,
+                                delay: index * 0.06,
+                            }}
+                            className="flex items-start gap-4"
+                        >
+                            <div
+                                className="
+                            mt-1.5
+                            flex
+                            h-6
+                            w-6
+                            shrink-0
+                            items-center
+                            justify-center
+                            rounded-full
+                            bg-cyan-500/10
+                        "
+                            >
+                                <ChevronRight className="h-3.5 w-3.5 text-cyan-400" />
+                            </div>
+
+                            <p
+                                className="
+                            leading-8
+                            text-slate-600
+                            dark:text-slate-300
+                        "
+                            >
+                                {item}
+                            </p>
+
+                        </motion.div>
+
+                    ))}
+
+                </div>
+
+                {/* Technologies */}
+
+                <div className="mt-10 flex flex-wrap gap-3">
+
+                    {experience.achievements.map((tag) => (
+
+                        <span
+                            key={tag}
+                            className="
+                        rounded-full
+                        border
+                        border-cyan-400/20
+                        bg-cyan-400/8
+                        px-4
+                        py-2
+                        text-xs
+                        font-semibold
+                        tracking-wide
+                        text-cyan-500
+                        transition-all
+                        duration-300
+                        hover:border-cyan-400/40
+                        hover:bg-cyan-400/[0.14]
+                        hover:shadow-[0_0_18px_rgba(34,211,238,0.18)]
+                    "
+                        >
+                            {tag}
+                        </span>
+
+                    ))}
+
+                </div>
+
             </div>
+
         </div>
     );
 }
