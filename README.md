@@ -127,7 +127,6 @@ npm run preview
 - Skills
 - Projects
 - Experience
-- Contact
 
 ---
 
