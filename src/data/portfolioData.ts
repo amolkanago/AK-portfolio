@@ -12,17 +12,18 @@ export const personalInfo = {
 
 export const aboutData = {
   description: [
-    "Software Developer with 3+ years of industry experience.",
-    "Built enterprise healthcare and workflow management applications.",
-    "Expertise in React.js, Next.js, TypeScript, and component-driven development.",
-    "Passionate about clean architecture, performance, and user experience.",
-    "Currently building full-stack solutions using Node.js, Express.js, and MongoDB."
+    "Software Developer with 3+ years of professional experience building modern web applications.",
+    "Contributed to enterprise healthcare and workflow management platforms with a strong focus on frontend development.",
+    "Experienced in React.js, Next.js, TypeScript, and building reusable, scalable UI components.",
+    "Passionate about writing clean, maintainable code with a focus on performance and user experience.",
+    "Currently expanding expertise in full-stack development using Node.js, Express.js, and MongoDB.",
   ],
+
   stats: [
-    { label: 'Years Experience', value: '1+' },
-    { label: 'Enterprise Apps Delivered', value: '5+' },
-    { label: 'Technologies Mastered', value: '15+' },
-    { label: 'Components Built', value: '100+' },
+    { label: 'Years Experience', value: '3+' },
+    { label: 'Enterprise Projects', value: '5+' },
+    { label: 'Technologies', value: '15+' },
+    { label: 'UI Components Built', value: '100+' },
   ],
 };
 
@@ -298,7 +299,7 @@ export const projectsData = [
       "Tailwind CSS",
     ],
   },
-  
+
   {
     title: "Meal Master",
     description:
