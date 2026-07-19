@@ -6,17 +6,19 @@ export function ProjectTechnologies({
     technologies,
 }: ProjectTechnologiesProps) {
     return (
-        <div>
+        <div className="mt-8">
             <h4
                 className="
-          mb-4
-          text-lg
-          font-semibold
-          text-slate-900
-          dark:text-white
+            mb-4
+            text-sm
+            font-semibold
+            uppercase
+            tracking-wider
+            text-slate-500
+            dark:text-slate-400
         "
             >
-                Technologies Used
+                Technologies
             </h4>
 
             <div className="flex flex-wrap gap-2">
@@ -24,19 +26,27 @@ export function ProjectTechnologies({
                     <span
                         key={technology}
                         className="
-              px-3
-              py-1.5
-              rounded-full
-              bg-blue-50
-              dark:bg-blue-950/30
-              text-blue-700
-              dark:text-blue-300
-              text-sm
-              font-medium
-              border
-              border-blue-200/50
-              dark:border-blue-800/30
-            "
+                    rounded-full
+                    border
+                    border-slate-200
+                    bg-slate-50
+                    px-3
+                    py-1.5
+                    text-sm
+                    font-medium
+                    text-slate-700
+                    transition-colors
+                    duration-300
+                    hover:border-blue-300
+                    hover:bg-blue-50
+                    hover:text-blue-700
+                    dark:border-slate-700
+                    dark:bg-slate-800
+                    dark:text-slate-300
+                    dark:hover:border-blue-700
+                    dark:hover:bg-blue-950/30
+                    dark:hover:text-blue-300
+                "
                     >
                         {technology}
                     </span>

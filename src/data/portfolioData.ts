@@ -1,3 +1,10 @@
+import p1 from "../assets/p1.png";
+import p2 from "../assets/p2.png";
+import p3 from "../assets/p3.png";
+import p4 from "../assets/p4.png";
+import p5 from "../assets/p5.png";
+import p6 from "../assets/p6.png";
+
 export const personalInfo = {
   name: 'Amol Kanago',
   title: 'Software Developer |  Full Stack Developer',
@@ -218,12 +225,16 @@ export const experienceData = [
 export const projectsData = [
   {
     title: "Enterprise Healthcare Data Platform",
+    image: p1,
+    featured: true,
+    type: "Enterprise Project",
+
     description:
-      "Developed healthcare data management modules for cloud onboarding, synchronization, and operational administration workflows.",
+      "Developed enterprise healthcare modules for cloud onboarding, connector management, data synchronization, and operational administration workflows.",
 
     highlights: [
       "Built Connector & Data Mart Management modules",
-      "Integrated Snowflake, Databricks, and Azure Blob Storage",
+      "Integrated Snowflake, Databricks & Azure Blob Storage",
       "Implemented healthcare data synchronization workflows",
     ],
 
@@ -240,8 +251,12 @@ export const projectsData = [
 
   {
     title: "Healthcare Data Exchange Platform",
+    image: p2,
+    featured: true,
+    type: "Enterprise Project",
+
     description:
-      "Built frontend solutions enabling secure healthcare data exchange and interoperability between organizations.",
+      "Built secure healthcare interoperability modules enabling data exchange between organizations using FHIR standards.",
 
     highlights: [
       "Developed payer-to-payer workflow modules",
@@ -260,13 +275,17 @@ export const projectsData = [
 
   {
     title: "Prior Authorization Platform",
+    image: p3,
+    featured: true,
+    type: "Enterprise Project",
+
     description:
-      "Developed healthcare workflow modules to streamline prior authorization processes between providers and payers, improving efficiency and compliance.",
+      "Developed healthcare workflow modules that streamline prior authorization requests between providers and payers.",
 
     highlights: [
-      "Built Questionnaire and Decision Support modules",
-      "Implemented prior authorization request submission and tracking workflows",
-      "Integrated FHIR-based APIs for healthcare interoperability",
+      "Built Questionnaire & Decision Support modules",
+      "Implemented request submission and tracking workflows",
+      "Integrated FHIR-based healthcare interoperability APIs",
     ],
 
     technologies: [
@@ -281,8 +300,15 @@ export const projectsData = [
 
   {
     title: "TasteHub",
+    image: p4,
+    featured: true,
+    type: "Personal Project",
+
+    github: "https://github.com/yourusername/tastehub",
+    live: "https://tastehub-demo.vercel.app",
+
     description:
-      "Full-stack food ordering and restaurant management platform built with the MERN stack.",
+      "Production-ready MERN food ordering platform with authentication, restaurant management, and complete order workflows.",
 
     highlights: [
       "JWT authentication and authorization",
@@ -302,13 +328,19 @@ export const projectsData = [
 
   {
     title: "Meal Master",
+    image: p5,
+    type: "Personal Project",
+
+    github: "https://github.com/yourusername/meal-master",
+    live: "https://mealmaster.vercel.app",
+
     description:
-      "Single-page recipe management application built with React, enabling users to discover, search, and organize recipes efficiently.",
+      "React single-page recipe management application featuring recipe search, filtering, and responsive user experience.",
 
     highlights: [
-      "Developed advanced recipe search and filtering features",
-      "Implemented dynamic SPA routing and state management",
-      "Created responsive and user-friendly recipe browsing experience",
+      "Advanced recipe search and filtering",
+      "Dynamic SPA routing and state management",
+      "Responsive recipe browsing experience",
     ],
 
     technologies: [
@@ -322,13 +354,19 @@ export const projectsData = [
 
   {
     title: "Focus Frenzy",
+    image: p6,
+    type: "Personal Project",
+
+    github: "https://github.com/yourusername/focus-frenzy",
+    live: "https://focusfrenzy.vercel.app",
+
     description:
-      "Responsive camera eCommerce website developed using HTML, CSS, JavaScript, and Bootstrap, showcasing camera products with an intuitive shopping experience.",
+      "Responsive camera eCommerce website showcasing products with modern UI, filtering, and mobile-first design.",
 
     highlights: [
-      "Designed responsive product catalog and landing pages",
-      "Implemented product filtering and search functionality",
-      "Built modern UI with Bootstrap components and custom styling",
+      "Responsive product catalogue",
+      "Product filtering and search",
+      "Modern Bootstrap-based UI",
     ],
 
     technologies: [
