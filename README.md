@@ -188,9 +188,9 @@ This portfolio showcases several real-world applications, including:
 | ---------------------------------------- | --------------------------------- |
 | 🏥 Healthcare Data Exchange Platform     | Secure healthcare data management |
 | 📋 Prior Authorization Management System | Healthcare workflow automation    |
-| 🍽 TasteHub                              | Food discovery platform           |
+| 🍽 TasteHub                              | Food ordering platform           |
 | 🎯 Focus Frenzy                          | Productivity application          |
-| 🥗 MealMaster                            | Meal planning & nutrition app     |
+| 🥗 MealMaster                            | Meal recipe finder app     |
 
 Each project includes:
 
