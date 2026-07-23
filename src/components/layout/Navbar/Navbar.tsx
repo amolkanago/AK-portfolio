@@ -79,7 +79,7 @@ export function Navbar() {
         <>
             {/* Scroll Progress */}
             <motion.div
-                className="fixed top-0 left-0 right-0 z-60 h-1 origin-left bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500"
+                className="fixed top-0 left-0 right-0 z-60 h-1 origin-left bg-gradient-to-r from-primary-500 via-accent-600 to-primary-700"
                 style={{
                     scaleX: progress / 100,
                 }}
