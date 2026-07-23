@@ -116,8 +116,7 @@ export default function HeroContent() {
     dark:text-slate-300
     border
     border-slate-200
-    dark:border-slate-700
-  "
+    dark:border-slate-700"
             >
                 <MapPin
                     className="h-4 w-4 text-blue-500"
